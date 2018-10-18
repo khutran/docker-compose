@@ -11,9 +11,8 @@ ENV nginxversion="1.12.2-1" \
     elversion="7_4" \
     port_apache=6669
 
-RUN cd ~ && \
-    curl 'https://setup.ius.io/' -o setup-ius.sh && \
-	bash setup-ius.sh && \
+RUN yum install -y wget &&\
+    wget -qO- https://setup.ius.io | bash - && \
     yum update -y && \
     yum install -y php71u-cli \
         php71u \
@@ -30,7 +29,7 @@ RUN cd ~ && \
 	php71u-cli \
 	php71u-devel
 
-RUN yum install -y wget openssl sed &&\
+RUN yum install -y openssl sed &&\
     yum -y autoremove &&\
     yum clean all &&\
     wget http://nginx.org/packages/$os/$osversion/x86_64/RPMS/nginx-$nginxversion.el$elversion.ngx.x86_64.rpm &&\
@@ -74,7 +73,6 @@ RUN yum -y install git && \
     yum -y install yarn && \
     yum -y install gcc-c++ make && \
     yum -y install libgcrypt-devel && \
-    ln -s /usr/lib64/libcurl.so.4 /usr/lib64/libcurl-gnutls.so.4 && \
     yum clean all
 
 #install forever
