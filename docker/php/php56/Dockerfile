@@ -9,6 +9,7 @@ RUN cd ~ && \
     bash setup-ius.sh
 
 RUN    yum -y update
+RUN yum search | grep php
 # RUN    yum install -y php56u-cli \
 #     php56u-fpm \
 #     php56u-devel \
