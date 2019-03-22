@@ -3,7 +3,7 @@ MAINTAINER "Dylan Lindgren" <dylan.lindgren@gmail.com>
 
 ENV port 9070
 # Install required repos, update, and then install PHP-FPM
-RUN  yum install epel-release && \
+RUN  yum install -y epel-release && \
     rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 RUN yum -y update
