@@ -9,18 +9,18 @@ RUN cd ~ && \
     bash setup-ius.sh
 
 RUN    yum -y update
-RUN    yum install -y php56u-cli \
-    php56u-fpm \
-    php56u-devel \
-    php56u-mysqlnd \
-    php56u-xml \
-    php56u-gd \
-    php56u-mcrypt \
-    php56u-ldap \
-    php56u-cli \
-    php56u-xmlrpc \
-    php56u-mbstring \
-    php56u-pdo
+# RUN    yum install -y php56u-cli \
+#     php56u-fpm \
+#     php56u-devel \
+#     php56u-mysqlnd \
+#     php56u-xml \
+#     php56u-gd \
+#     php56u-mcrypt \
+#     php56u-ldap \
+#     php56u-cli \
+#     php56u-xmlrpc \
+#     php56u-mbstring \
+#     php56u-pdo
 
 # Configure and secure PHP
 RUN sed -i "s/;date.timezone =.*/date.timezone = UTC/" /etc/php.ini && \
