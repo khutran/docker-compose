@@ -31,14 +31,22 @@
 
 ### Setup
 
-mkdir -p var/web \n
-mkdir -p etc/php/php56/php-fpm.d \n
-mkdir -p etc/php/php70/php-fpm.d \n
-mkdir -p var/www/certbot \n
-mkdir -p etc/nginx/conf.d \n
-mkdir -p etc/httpd/conf.d \n
-mkdir -p etc/bitnami/mysql/conf \n
-mkdir -p var/lib/mysql \n
+mkdir -p var/web 
 
-chown -R 1001:1001 var/lib \n
-chown -R 1001:1001 etc/bitnami \n
+mkdir -p etc/php/php56/php-fpm.d 
+
+mkdir -p etc/php/php70/php-fpm.d 
+
+mkdir -p var/www/certbot 
+
+mkdir -p etc/nginx/conf.d 
+
+mkdir -p etc/httpd/conf.d 
+
+mkdir -p etc/bitnami/mysql/conf 
+
+mkdir -p var/lib/mysql 
+
+chown -R 1001:1001 var/lib 
+
+chown -R 1001:1001 etc/bitnami 
