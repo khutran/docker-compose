@@ -13,7 +13,7 @@ services:
         ports:
             - "9070:9070"
         volumes:
-            - /var/www/web:/var/www/web
+            - ./var/web:/var/www/web
             - ./etc/php/php70/php-fpm.d:/usr/local/etc/php-fpm.d
         links:
             - mysql
@@ -32,7 +32,7 @@ services:
         ports:
             - "9056:9056"
         volumes:
-            - /var/www/web:/var/www/web
+            - ./var/web:/var/www/web
             - ./etc/php/php56/php-fpm.d:/usr/local/etc/php-fpm.d
             # - ./logs/php:/var/log/php-fpm
         links:
@@ -56,7 +56,7 @@ services:
             #nginx conf
             - ./etc/nginx/conf.d:/etc/nginx/conf.d
             #- ./etc/nginx/snippets:/etc/nginx/snippets
-            - /var/www/web:/var/www/web
+            - ./var/web:/var/www/web
             - ./var/www/certbot:/var/www/certbot
             - ./etc/nginx/letsencrypt/:/etc/letsencrypt/
             - ./etc/httpd/conf.d/web:/etc/httpd/conf.d/web
