@@ -29,3 +29,16 @@
 
 ### IP table:   
 
+### Setup
+
+mkdir -p var/web
+mkdir -p etc/php/php56/php-fpm.d
+mkdir -p etc/php/php70/php-fpm.d
+mkdir -p var/www/certbot
+mkdir -p etc/nginx/conf.d
+mkdir -p etc/httpd/conf.d
+mkdir -p etc/bitnami/mysql/conf
+mkdir -p var/lib/mysql
+
+chown -R 1001:1001 var/lib
+chown -R 1001:1001 etc/bitnami
