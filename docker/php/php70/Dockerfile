@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:7
 
 MAINTAINER "Dylan Lindgren" <dylan.lindgren@gmail.com>
 
@@ -6,20 +6,20 @@ ENV port 9070
 # Install required repos, update, and then install PHP-FPM
 RUN cd ~ && \
     curl 'https://setup.ius.io/' -o setup-ius.sh && \
-	bash setup-ius.sh && \
+    bash setup-ius.sh && \
     yum install -y php70u-cli \
-        php70u-fpm \
-        php70u-mysqlnd \
-        php70u-xml \
-        php70u-gd \
-        php70u-mcrypt \
-		php70u-xmlrpc \
-		php70u-json \
-        php70u-mbstring \
-        php70u-pdo \
-		php70u-common \
-		php70u-cli \
-		php70u-devel
+    php70u-fpm \
+    php70u-mysqlnd \
+    php70u-xml \
+    php70u-gd \
+    php70u-mcrypt \
+    php70u-xmlrpc \
+    php70u-json \
+    php70u-mbstring \
+    php70u-pdo \
+    php70u-common \
+    php70u-cli \
+    php70u-devel
 
 # Configure and secure PHP
 RUN sed -i "s/;date.timezone =.*/date.timezone = UTC/" /etc/php.ini && \
