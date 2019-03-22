@@ -1,4 +1,4 @@
-FROM centos:7.1
+FROM centos7.5.1804
 
 MAINTAINER "Dylan Lindgren" <dylan.lindgren@gmail.com>
 
@@ -6,8 +6,9 @@ ENV port 9070
 # Install required repos, update, and then install PHP-FPM
 RUN cd ~ && \
     curl 'https://setup.ius.io/' -o setup-ius.sh && \
-    bash setup-ius.sh && \
-    yum install -y php70u-cli \
+    sh setup-ius.sh
+
+RUN    yum install -y php70u-cli \
     php70u-fpm \
     php70u-mysqlnd \
     php70u-xml \
