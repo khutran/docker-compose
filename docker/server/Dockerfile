@@ -29,6 +29,7 @@ RUN     yum install -y epel-release && \
         php71w-devel
 
 RUN yum install -y openssl sed &&\
+        yum -y install wget && \
         yum -y autoremove &&\
         yum clean all &&\
         wget http://nginx.org/packages/$os/$osversion/x86_64/RPMS/nginx-$nginxversion.el$elversion.ngx.x86_64.rpm &&\
@@ -42,7 +43,6 @@ RUN yum -y --setopt=tsflags=nodocs update && \
         yum -y install epel-release && \
         yum -y --setopt=tsflags=nodocs install httpd && \
         yum clean all && \ 
-        yum -y install wget && \
         yum -y install yum-changelog && \
         yum changelog httpd && \
         cd /etc/yum.repos.d && \
