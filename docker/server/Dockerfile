@@ -11,23 +11,22 @@ ENV nginxversion="1.12.2-1" \
         elversion="7_4" \
         port_apache=6669
 
-RUN yum install -y wget &&\
-        wget -qO- https://setup.ius.io | bash - && \
+RUN cd ~ && \
+        rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm && \
         yum update -y && \
-        yum install -y php71u-cli \
-        php71u \
-        php71u-fpm \
-        php71u-mysqlnd \
-        php71u-xml \
-        php71u-gd \
-        php71u-mcrypt \
-        php71u-xmlrpc \
-        php71u-json \
-        php71u-mbstring \
-        php71u-pdo \
-        php71u-common \
-        php71u-cli \
-        php71u-devel
+        yum install -y php71w-cli \
+        php71w \
+        php71w-fpm \
+        php71w-mysqlnd \
+        php71w-xml \
+        php71w-gd \
+        php71w-mcrypt \
+        php71w-xmlrpc \
+        php71w-json \
+        php71w-mbstring \
+        php71w-pdo \
+        php71w-common \
+        php71w-devel
 
 RUN yum install -y openssl sed &&\
         yum -y autoremove &&\
