@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:7.1
 
 MAINTAINER "Dylan Lindgren" <dylan.lindgren@gmail.com>
 
