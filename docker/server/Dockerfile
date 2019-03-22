@@ -11,8 +11,7 @@ ENV nginxversion="1.12.2-1" \
         elversion="7_4" \
         port_apache=6669
 
-RUN cd ~ && \
-        rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm && \
+RUN     rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm && \
         yum update -y && \
         yum install -y php71w-cli \
         php71w \

@@ -3,9 +3,9 @@ MAINTAINER "Dylan Lindgren" <dylan.lindgren@gmail.com>
 
 ENV port 9070
 # Install required repos, update, and then install PHP-FPM
-RUN cd ~ && \
-    rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+RUN    rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
+RUN yum -y update
 RUN    yum install -y php70w-fpm \
     php70w-mysqlnd \
     php70w-xml \
